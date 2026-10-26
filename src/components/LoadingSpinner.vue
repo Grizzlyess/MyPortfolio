@@ -1,0 +1,34 @@
+<template>
+    <div class="flex justify-center items-center w-full h-screen bg-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 75" width="75" height="37.5">
+            <path
+            fill="none"
+            stroke="#0CA7FF"
+            stroke-width="10"
+            width-linecap = "round"
+            stroke-dasharray="150 192.5"
+            stroke-dashoffset="0"
+            d="M137.5 37.5c0 15.5-13.5 25-25 25-29 0-46-50-75-50-14 0-25 11-25 25s12 25 
+            25 25c29 0 46-50 70-50 12 0 25 9.5 25 25Z"
+            >
+                <animate
+                attribute-name="stroke-dashoffset"
+                calc-mode="spline"
+                dur="2"
+                values="342.5;~342.5"
+                key-splines="0 0 1 1"
+                repeat-count="indefinite"
+                >
+
+                </animate>
+            </path>
+        </svg>
+
+        
+    </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
