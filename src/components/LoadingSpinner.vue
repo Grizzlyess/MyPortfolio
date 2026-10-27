@@ -18,9 +18,7 @@
                 values="342.5;~342.5"
                 key-splines="0 0 1 1"
                 repeat-count="indefinite"
-                >
-
-                </animate>
+                ></animate>
             </path>
         </svg>
 
