@@ -51,11 +51,26 @@
                                 </svg>
                                 <div class="download-loader hidden"></div>
                             </div>
-                            <a href="/resume.pdf" download="resume.pdf" class="pl-2 text-primary"> Download resume</a>
+                            <a href="../assets/resume.pdf" download="resume.pdf" class="pl-2 text-primary"> Download resume</a>
                         </div>
                     </button>
                 </div>
+            </div>
+            <div class="lg:h-full md:flex">
+                <figure class="relative overflow-hidden rounded-lg">
+                    <img src="../assets/heroPic.jpeg" alt="Hero Picture" class="w-full h-auto object-cover"/>
+                    <div class="absolute top-0 left-0 w-14 h-14 bg-white clip-top-left rounded-br-[20px]"></div>
+                    <div class="absolute bottom-0 right-0 w-14 h-14 bg-white clip-bottom-right rounded-tl-[20px]"></div>
+                    <figcaption class="absolute bottom-16 left-2/4 flex w-[calc(100%-4rem)] -translate-x-2/4 justify-between
+                    rounded-xl border border-primary2 bg-white/75 py-4 px-6 shadow-lg shadow-black/5 saturate-200
+                    backdrop-blur-sm
+                    ">
+                        <div>
+                            <h5 class="uppercase font-semibold text-primary text-base">FullStack Developer</h5>
+                        </div>
+                    </figcaption>
 
+               </figure>
             </div>
         </div>
     </div>
@@ -65,3 +80,11 @@
 import { defineAsyncComponent } from 'vue';
 const NavBar = defineAsyncComponent(()=>import('./NavBar.vue'));
 </script>
+<style scoped>
+.clip-top-left{
+    clip-path: polygon(0 0 , 100% 0, 100%);
+}
+.clip-bottom-right{
+    clip-path: polygon(100% 100% , 100% 0, 100%);
+}
+</style>
