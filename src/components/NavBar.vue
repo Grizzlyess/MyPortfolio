@@ -1,7 +1,7 @@
 <template>
   <header class="max-w-full z-20">
     <nav
-      class="flex border-b-2 border-b-primary2 items-center relative p-3 justify-between md:h-16 mx-auto md:px-4 container flex-wrap md:flex-nowrap"
+      class="flex border-b-2 border-b-primary2 items-center relative p-3 justify-between md:h-16 h-28 mx-auto md:px-4 container flex-wrap md:flex-nowrap"
     >
       <!-- Logo -->
       <div class="text-3xl font-bold flex text-primary">LOGO</div>
@@ -32,11 +32,11 @@
       <!-- Responsive Menu -->
       <div
         :class="[
-        'fixed inset-0 z-20 flex flex-col items-center justify-center bg-primary md:relative md:bg-transparent md:flex md:justify-between md:flex-row md:space-x-5',
-        isMenuOpen ? 'block' : 'hidden',
+          'fixed inset-0 z-20 flex flex-col items-center justify-center bg-primary md:static md:inset-auto md:flex md:flex-row md:bg-transparent md:w-auto',
+          isMenuOpen ? 'flex' : 'hidden md:flex',
         ]"
       >
-        <ul class="flex flex-col items-center space-y-5 md:flex-row md:space-y-0 font-medium">
+        <ul class="flex flex-col items-center space-y-5 md:flex-row md:space-x-5 md:space-y-0 font-medium">
           <li v-for="item in Menu" :key="item.name">
             <a
               :href="item.href"
