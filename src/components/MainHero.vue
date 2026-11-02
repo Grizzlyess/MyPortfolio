@@ -1,5 +1,5 @@
 <template>
-    <section class="relative w-full">
+    <section class="relative w-full" data-aos="zoom-in-up">
     <NavBar />
     <div class="w-full px-5 sm:px-8 md:px-12 lg:px-8 max-w-screen-lg lg:max-w-screen-xl mx-auto relative">
         <div class="grid lg:grid-cols-2 gap-10 xl:gap-14 relative pt-2 lg:max-w-none max-w-2xl md:max-w-3xl mx-auto">
