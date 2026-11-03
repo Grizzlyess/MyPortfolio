@@ -6,6 +6,7 @@
           <div class="bg-primary2">
             <HeroSection/>
             <Skills/>
+            <Services/>
           </div>
         </template>
 
@@ -28,4 +29,6 @@ AOS.init({ duration: 2000 , delay: 200 });
 import LoadingSpinner from './components/LoadingSpinner.vue';
 const HeroSection = defineAsyncComponent(()=>import('./components/HeroSection.vue'))
 const Skills = defineAsyncComponent(()=>import('./components/Skills.vue'))
+const Services = defineAsyncComponent(()=>import('./components/Services.vue'))
+
 </script>
