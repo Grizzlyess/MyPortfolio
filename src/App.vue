@@ -8,6 +8,9 @@
             <Skills/>
             <Services/>
             <Projects/>
+            <ContactMe/>
+            <Footer/>
+            <BackToTop/>
           </div>
         </template>
 
@@ -32,5 +35,8 @@ const HeroSection = defineAsyncComponent(()=>import('./components/HeroSection.vu
 const Skills = defineAsyncComponent(()=>import('./components/Skills.vue'))
 const Services = defineAsyncComponent(()=>import('./components/Services.vue'))
 const Projects = defineAsyncComponent(()=>import('./components/Projects.vue'))
+const ContactMe = defineAsyncComponent(()=>import('./components/ContactMe.vue'))
+const Footer = defineAsyncComponent(()=>import('./components/Footer.vue'))
+const BackToTop = defineAsyncComponent(()=>import('./components/BackToTop.vue'))
 
 </script>
