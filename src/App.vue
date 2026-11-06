@@ -7,6 +7,7 @@
             <HeroSection/>
             <Skills/>
             <Services/>
+            <Projects/>
           </div>
         </template>
 
@@ -30,5 +31,6 @@ import LoadingSpinner from './components/LoadingSpinner.vue';
 const HeroSection = defineAsyncComponent(()=>import('./components/HeroSection.vue'))
 const Skills = defineAsyncComponent(()=>import('./components/Skills.vue'))
 const Services = defineAsyncComponent(()=>import('./components/Services.vue'))
+const Projects = defineAsyncComponent(()=>import('./components/Projects.vue'))
 
 </script>
