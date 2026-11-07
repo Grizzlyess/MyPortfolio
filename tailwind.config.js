@@ -6,10 +6,22 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        primary: '#0CA7FF',
-        primary2: '#d7f0ff',
-        secondary: 'ebf7ff'
+      colors: {
+        primary: '#805EBF', 
+        primary2: '#E6F2FF', 
+        
+        paz: {
+          100: '#E6F2FF',
+          200: '#CCDCFF',
+          300: '#B3BEFF',
+          400: '#9A99F2',
+          500: '#8B79D9',
+          600: '#805EBF',
+          700: '#6F46A6',
+          800: '#60308C',
+          900: '#511F73',
+          950: '#431259',
+        }
       }
     },
   },
