@@ -36,7 +36,7 @@ import { defineAsyncComponent } from 'vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import backgroundImg from './assets/background1.jpg';
+import backgroundImg from './assets/background2.jpg';
 
 AOS.init({ duration: 2000 , delay: 200 });
 import LoadingSpinner from './components/LoadingSpinner.vue';
