@@ -1,43 +1,44 @@
 <template>
-<h2 class="text-4xl font-bold mb-4 text-center" data-aos="fade-right">Experience</h2>
-<div class="space-y-16 py-14">
-    <div class="space-y-16 py-14">
-        <div v-for="element in Experience" :key="element.id" data-aos="fade-right" class="flex items-center rounded-x
-            bg-white/75
-            ">
-                <div class="w-1/4">
-                    <img src="https://img.icons8.com/ios-filled/100/lawyer.png" alt="lawyer">
-                </div>
-                <div class="w-3/4 pl-4">
-                    <h3 class="uppercase font-semibold text-primary text-base">{{ element.title }}</h3>
-                    <p class="text-gray-500">{{ element.company }}</p>
-                    <p class="text-gray-500">{{ element.duration }}</p>
-                </div>
-            </div>
+  <div class="w-full h-full flex flex-col">
+    <h2 class="text-2xl font-bold mb-6 text-center text-gray-800" data-aos="fade-right">Experiência Profissional</h2>
+    
+    <div class="space-y-8 flex-1">
+      <div v-for="element in Experience" :key="element.id" data-aos="fade-right" class="flex items-center">
+          
+          <div class="w-1/4 flex justify-center">
+              <img src="https://img.icons8.com/ios-filled/50/000000/lawyer.png" alt="lawyer" class="w-10 h-10">
+          </div>
+          
+          <div class="w-3/4 pl-2">
+              <h3 class="uppercase font-semibold text-primary text-xs">{{ element.title }}</h3>
+              <p class="text-gray-500 text-xs mt-1">{{ element.company }}</p>
+              <p class="text-gray-500 text-[10px]">{{ element.duration }}</p>
+          </div>
+
+      </div>
     </div>
-</div>
+  </div>
 </template>
 <script setup>
 import { ref } from 'vue';
 const Experience = ref([
     {
         id: 1,
-        title: 'Software Engineer Intern',
+        title: 'Engenharia de Software Estágio',
         company: 'Pagbank',
         duration: 'Jul 2025 - Jul 2026'
     },
     {
         id: 2,
-        title: 'Software Engineer',
+        title: 'Engenharia de Software',
         company: 'IFCE',
         duration: 'Jun 2026 - '
     },
     {
         id: 3,
-        title: 'Data Analytics',
+        title: 'Analista/Cientista de Dados',
         company: 'IFCE',
         duration: 'Jan 2024 - Dec 2024'
     }
-    
 ])
 </script>
