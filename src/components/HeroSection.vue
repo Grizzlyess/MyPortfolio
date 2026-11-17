@@ -1,16 +1,17 @@
 <template>
-    <section class="relative w-full p-4 bg-transparent">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+    <section class="relative w-full py-4 px-2 bg-transparent">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch max-w-[1300px] mx-auto">
             
-            <div class="col-span-1 order-2 md:order-1 lg:order-1 rounded-3xl p-5 bg-white border-2 border-primary/20 shadow-lg">
+            <div class="lg:col-span-3 order-2 md:order-1 rounded-3xl p-4 bg-white border-2 border-primary/20 shadow-lg flex flex-col justify-start">
                 <Experience/>
             </div>
             
-            <div class="col-span-1 order-1 md:col-span-1 lg:col-span-2 rounded-3xl p-6 bg-white border-2 border-primary/20 shadow-lg flex flex-col justify-center">
+            <div class="lg:col-span-6 order-1 md:col-span-2 rounded-3xl p-4 bg-white border-2 border-primary/20 shadow-lg flex flex-col justify-start relative">
                 <MainHero/>
             </div>
             
-            <div class="col-span-1 order-3 md:order-3 lg:order-3 rounded-3xl p-5 bg-white border-2 border-primary/20 shadow-lg w-full">
+            <div class="lg:col-span-3 order-3 rounded-3xl p-4 bg-white border-2 border-primary/20 shadow-lg flex flex-col justify-start w-full">
                 <Education/>
             </div>
 
