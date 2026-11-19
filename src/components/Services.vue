@@ -1,17 +1,14 @@
 <template>
-  <!-- scroll-mt-24 evita que a navbar fixa corte o título quando alguém clicar no menu -->
   <section id="services" class="relative w-full py-12 px-4 scroll-mt-24">
     <div class="max-w-[1300px] mx-auto">
       
-      <!-- Título em branco com sombra suave para destacar no fundo roxo -->
-      <h2 
-        class="text-3xl md:text-4xl font-bold text-white text-center mb-10 drop-shadow-md" 
+        <h2 
+        class="font-pacifico font-normal text-3xl md:text-4xl text-white text-center mb-10 drop-shadow-md" 
         data-aos="fade-up"
-      >
+        >
         Meus Serviços
-      </h2>
+        </h2>
 
-      <!-- Grid responsiva (1 coluna no celular, 2 no tablet, 3 no PC) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="service in services"
@@ -19,7 +16,6 @@
           data-aos="fade-up"
           class="bg-white rounded-3xl p-6 border-2 border-primary/20 shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
         >
-          <!-- Ícone centralizado com fundo lilás bem clarinho -->
           <div class="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
             <img :src="service.icon" :alt="service.name" class="w-8 h-8" />
           </div>
@@ -80,3 +76,9 @@ const services = ref([
   }
 ]);
 </script>
+
+<style scoped>
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+</style>

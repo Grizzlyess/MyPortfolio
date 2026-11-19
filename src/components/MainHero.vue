@@ -11,7 +11,7 @@
                 <span class="block whitespace-nowrap text-primary mt-1">Maria Clara</span>
                 </h1>
                 <p class="text-gray-500 pt-6 mx-auto lg:mx-0 max-w-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id ex dolores hic ullam in reprehenderit
+                    Desenvolvedora Fullstack formada em Ciência da Computação. Construo aplicações web escaláveis com Java, Spring Boot e Vue.js, unindo código limpo e boa experiência de uso.
                 </p>
             </div>
             
