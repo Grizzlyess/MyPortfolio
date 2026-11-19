@@ -1,70 +1,82 @@
 <template>
-    <section id="services" class="text-white mt-20">
-        <h2 class="text-4xl font-bold text-black mb-4 text-center" data-aos="fade-up">My Services</h2>
-        <div class="py-8 xl:px-16 px-4 sm:py-16 grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12
-        lg:grid-cols-3
-        ">
-            <div
-            class="px-[12px] mb-[24px]"
-            data-aos="fade-up"
-            v-for="element in services"
-            :key="element.id"
-            >
-                <div class="mt-[30px] relative flex flex-col justify-center text-center rounded-[30px] bg-white">
-                    <div class="mt-[-7px] p-[20px] relative bg-[#fff] rounded-[50%]">
-                        <span class="h-[60px] w-[60px] m-auto border-[1px] border-solid border-[#111a24] absolute top-[8px] left-[8px]
-                        rounded-[50%] inline-block z-[5]"></span>
-                        <img :src="element.icon" alt="services" class="h-[35px] w-[35px] relative z-[1]"/>
-                    </div>
-                    <div class="p-[30px]">
-                        <h3 class="uppercase font-semibold text-primary text-base">{{ element.name }}</h3>
-                        <p class="text-[14px] leading-[20px] text-gray-500 tracking-[0.03rem]">{{ element.description }}</p>
-                    </div>
-                </div>
-            </div>
+  <!-- scroll-mt-24 evita que a navbar fixa corte o título quando alguém clicar no menu -->
+  <section id="services" class="relative w-full py-12 px-4 scroll-mt-24">
+    <div class="max-w-[1300px] mx-auto">
+      
+      <!-- Título em branco com sombra suave para destacar no fundo roxo -->
+      <h2 
+        class="text-3xl md:text-4xl font-bold text-white text-center mb-10 drop-shadow-md" 
+        data-aos="fade-up"
+      >
+        Meus Serviços
+      </h2>
 
+      <!-- Grid responsiva (1 coluna no celular, 2 no tablet, 3 no PC) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="service in services"
+          :key="service.id"
+          data-aos="fade-up"
+          class="bg-white rounded-3xl p-6 border-2 border-primary/20 shadow-lg flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+        >
+          <!-- Ícone centralizado com fundo lilás bem clarinho -->
+          <div class="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+            <img :src="service.icon" :alt="service.name" class="w-8 h-8" />
+          </div>
+
+          <!-- Título e descrição -->
+          <h3 class="uppercase font-bold text-primary text-base mb-2">
+            {{ service.name }}
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            {{ service.description }}
+          </p>
         </div>
-    </section>
+      </div>
+
+    </div>
+  </section>
 </template>
+
 <script setup>
 import { ref } from 'vue';
-const services = ref([
-    {
-        id: 1,
-        icon: 'https://img.icons8.com/ios-filled/100/google-code.png',
-        name: 'Web Development',
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, optio at a fugit quas deleniti"
-    },
-    {
-        id: 2,
-        icon: 'https://img.icons8.com/ios-filled/100/google-code.png',
-        name: 'Web Development',
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, optio at a fugit quas deleniti"
-    },
-    {
-        id: 3,
-        icon: 'https://img.icons8.com/ios-filled/100/google-code.png',
-        name: 'Web Development',
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, optio at a fugit quas deleniti"
-    },
-    {
-        id: 4,
-        icon: 'https://img.icons8.com/ios-filled/100/google-code.png',
-        name: 'Web Development',
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, optio at a fugit quas deleniti"
-    },
-    {
-        id: 5,
-        icon: 'https://img.icons8.com/ios-filled/100/google-code.png',
-        name: 'Web Development',
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, optio at a fugit quas deleniti"
-    },
-    {
-        id: 6,
-        icon: 'https://img.icons8.com/ios-filled/100/google-code.png',
-        name: 'Web Development',
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, optio at a fugit quas deleniti"
-    }
 
-])
+const services = ref([
+  {
+    id: 1,
+    icon: 'https://img.icons8.com/ios-filled/50/805EBF/source-code.png',
+    name: 'Desenvolvimento Backend',
+    description: 'Criação de APIs REST robustas, microsserviços e integrações escaláveis com Java, Spring Boot e bancos de dados relacionais.'
+  },
+  {
+    id: 2,
+    icon: 'https://img.icons8.com/ios-filled/50/805EBF/web-design.png',
+    name: 'Desenvolvimento Frontend',
+    description: 'Interfaces modernas, responsivas e focadas na experiência do usuário utilizando Vue.js, TypeScript e Tailwind CSS.'
+  },
+  {
+    id: 3,
+    icon: 'https://img.icons8.com/ios-filled/50/805EBF/combo-chart.png',
+    name: 'Análise de Dados & BI',
+    description: 'Tratamento, modelagem e visualização de dados estratégicos com Python, SQL, Power BI e Tableau.'
+  },
+  {
+    id: 4,
+    icon: 'https://img.icons8.com/ios-filled/50/805EBF/smartphone-tablet.png',
+    name: 'Desenvolvimento Mobile',
+    description: 'Aplicativos multiplataforma com Flutter, suporte offline-first e sincronização em nuvem.'
+  },
+  {
+    id: 5,
+    icon: 'https://img.icons8.com/ios-filled/50/805EBF/cloud.png',
+    name: 'Cloud & Deploy',
+    description: 'Containerização com Docker e publicação de aplicações web em ambientes como Google Cloud, Cloudflare e Render.'
+  },
+  {
+    id: 6,
+    icon: 'https://img.icons8.com/ios-filled/50/805EBF/figma.png',
+    name: 'UI/UX Design',
+    description: 'Prototipação de wireframes e interfaces acessíveis no Figma, unindo identidade visual e usabilidade.'
+  }
+]);
 </script>
