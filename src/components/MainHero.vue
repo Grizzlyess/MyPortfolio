@@ -6,9 +6,9 @@
             
             <!-- LADO ESQUERDO: TEXTOS -->
             <div class="lg:col-span-5 flex flex-col text-center lg:text-left pt-2">
-                <h1 class="font-bold text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-gray-800">
-                    Hi, I'm <br>
-                    <span class="text-primary">Maria Clara</span>
+                <h1 class="font-pacifico font-normal text-2xl sm:text-3xl xl:text-4xl text-gray-800 leading-snug">
+                <span class="block whitespace-nowrap">Oi! Eu sou a</span>
+                <span class="block whitespace-nowrap text-primary mt-1">Maria Clara</span>
                 </h1>
                 <p class="text-gray-500 pt-6 mx-auto lg:mx-0 max-w-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id ex dolores hic ullam in reprehenderit
@@ -33,3 +33,9 @@
 
 <script setup>
 </script>
+
+<style scoped>
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+</style>
