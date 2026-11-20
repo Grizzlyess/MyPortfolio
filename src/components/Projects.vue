@@ -1,17 +1,14 @@
 <template>
   <section id="projects" class="relative w-full py-12 px-4 scroll-mt-24">
-    <!-- Mesmo max-w-[1300px] das seções de cima para alinhar perfeitamente -->
     <div class="max-w-[1300px] mx-auto">
       
-      <!-- Título em branco com Pacifico igual ao "Meus Serviços" -->
       <h2 
         class="font-pacifico font-normal text-3xl md:text-4xl text-white text-center mb-10 drop-shadow-md" 
         data-aos="fade-up"
       >
-        Meus Projetos
+        Projetos Recentes
       </h2>
 
-      <!-- Grid de 3 colunas no PC (2 no tablet, 1 no celular) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="project in projects"
@@ -19,7 +16,7 @@
           data-aos="fade-up"
           class="bg-white rounded-3xl border-2 border-primary/20 shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
         >
-          <!-- Imagem com altura controlada (h-48) para não ficar gigante -->
+          <!-- Imagem -->
           <div class="w-full h-48 overflow-hidden bg-primary/10">
             <img
               :src="project.image"
@@ -28,10 +25,9 @@
             />
           </div>
 
-          <!-- Conteúdo do card -->
+          <!-- Conteúdo -->
           <div class="p-6 flex flex-col flex-1 justify-between">
             <div>
-              <!-- Tag da categoria -->
               <span class="inline-block bg-primary/10 text-primary text-xs font-medium px-3 py-1 rounded-full mb-3">
                 {{ project.category }}
               </span>
@@ -40,12 +36,21 @@
                 {{ project.title }}
               </h3>
 
-              <p class="text-gray-500 text-sm leading-relaxed mb-6">
+              <p class="text-gray-500 text-sm leading-relaxed mb-3">
                 {{ project.description }}
               </p>
+
+              <!-- Link Leia Mais -->
+              <a
+                :href="project.detailsUrl"
+                class="inline-flex items-center gap-1 text-primary text-xs font-semibold mb-5 group hover:underline"
+              >
+                <span>Leia mais sobre o projeto</span>
+                <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </a>
             </div>
 
-            <!-- Botões (mantendo o estilo roxo arredondado) -->
+            <!-- Botões -->
             <div class="flex items-center gap-3 mt-auto">
               <a
                 v-if="project.liveUrl"
@@ -73,6 +78,9 @@
 </template>
 
 <script setup>
+import carPriceImg from '../assets/car-price.png';
+import capiImg from '../assets/capi.png';
+import clicImg from '../assets/clic.png';
 import { ref } from 'vue';
 
 const projects = ref([
@@ -81,27 +89,36 @@ const projects = ref([
     category: 'Fullstack Web',
     title: 'CLIC Libras',
     description: 'Plataforma colaborativa de dicionário de termos técnicos e científicos em Libras, construída com Java, Spring Boot, Vue.js e PostgreSQL.',
-    image: 'https://via.placeholder.com/600x400', // Troque pelo print do projeto
+    image: clicImg,
+    detailsUrl: '/projeto/clic-libras',
     liveUrl: 'https://cliclibras.tech',
-    codeUrl: 'https://github.com/Grizzlyess'
+    codeUrl: ''
   },
   {
     id: 2,
     category: 'Fullstack Web',
     title: 'CAPI',
     description: 'Aplicação web de consumo ecológico com calculadora de pegada de carbono e consulta de Eco-Score, usando React, Node.js, Prisma e MongoDB.',
-    image: 'https://via.placeholder.com/600x400', // Troque pelo print do projeto
-    liveUrl: '',
-    codeUrl: 'https://github.com/Grizzlyess'
+    image: capiImg,
+    detailsUrl: '/projeto/capi',
+    liveUrl: 'https://capi-js.onrender.com', 
+    codeUrl: 'https://github.com/Tomorrow-s-Tech/cliclibras'
   },
   {
     id: 3,
     category: 'Machine Learning',
     title: 'Car Price Prediction',
     description: 'Aplicação web para predição de preços de veículos utilizando Random Forest com Python, Scikit-Learn, Pandas e Django.',
-    image: 'https://via.placeholder.com/600x400', // Troque pelo print do projeto
+    image: carPriceImg,
+    detailsUrl: '/projeto/car-price-prediction',
     liveUrl: 'https://car-price-prediction-app-3iww.onrender.com',
-    codeUrl: 'https://github.com/Grizzlyess'
+    codeUrl: 'https://github.com/Grizzlyess/Car-Price-Prediction-App'
   }
 ]);
 </script>
+
+<style scoped>
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+</style>
