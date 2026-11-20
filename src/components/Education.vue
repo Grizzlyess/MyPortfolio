@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full flex flex-col">
     
-    <h2 class="text-xl font-bold mb-3 text-center text-gray-800" data-aos="fade-left">Education</h2>
+    <h2 class="text-xl font-bold mb-3 text-center text-gray-800" data-aos="fade-left">Educação</h2>
     
     <div class="space-y-3">
       <div v-for="element in Education" :key="element.id" data-aos="fade-left" class="flex items-center">
@@ -18,7 +18,7 @@
 
     <hr class="my-3 border-gray-200">
 
-    <h2 class="text-xl font-bold mb-3 text-center text-gray-800" data-aos="fade-left">Artigos</h2>
+    <h2 class="text-xl font-bold mb-3 text-center text-gray-800" data-aos="fade-left">Artigos Publicados</h2>
     <div class="space-y-3 flex-1">
       
       <a 

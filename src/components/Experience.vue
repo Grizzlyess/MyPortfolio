@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-full flex flex-col">
     <h2 class="text-xl font-bold mb-3 text-center text-gray-800" data-aos="fade-right">
-      Experience
+      Experiência
     </h2>
     
     <div class="space-y-4">
