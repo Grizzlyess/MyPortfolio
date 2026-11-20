@@ -19,12 +19,12 @@
     </div>
 
 
-    <div class="flex-1 relative w-full min-h-[120px]" data-aos="zoom-in">
-    <img 
+    <div class="flex-1 relative w-full flex justify-center mt-4 lg:mt-4 lg:min-h-[120px]" data-aos="zoom-in">
+      <img 
         src="../assets/kuromi.png" 
         alt="Kuromi" 
-        class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-56 max-w-none h-auto object-contain transition-transform duration-300 hover:scale-105"
-    />
+        class="w-36 lg:w-48 lg:max-w-none h-auto object-contain lg:absolute lg:-bottom-5 lg:left-1/2 lg:-translate-x-1/2 transition-transform duration-300 hover:scale-105"
+      />
     </div>
   </div>
 </template>

@@ -1,106 +1,107 @@
 <template>
-  <section id="projects">
-    <h2
-      class="text-4xl font-bold text-black mb-4 text-center"
-      data-aos="fade-up"
-    >
-      My Projects
-    </h2>
-
-    <div class="py-8 xl:px-16 px-4 sm:py-16 space-y-12 grid grid-cols-1 pt-10">
-      <div
-        v-for="element in projects"
-        :key="element.title"
+  <section id="projects" class="relative w-full py-12 px-4 scroll-mt-24">
+    <!-- Mesmo max-w-[1300px] das seções de cima para alinhar perfeitamente -->
+    <div class="max-w-[1300px] mx-auto">
+      
+      <!-- Título em branco com Pacifico igual ao "Meus Serviços" -->
+      <h2 
+        class="font-pacifico font-normal text-3xl md:text-4xl text-white text-center mb-10 drop-shadow-md" 
         data-aos="fade-up"
-        class="flex flex-col md:flex-row md:items-center rounded-3xl bg-white mb-6 overflow-hidden shadow-sm"
       >
-        <!-- Imagem com proporção controlada para telas médias/grandes -->
-        <div class="w-full md:w-1/2 h-64 md:h-full">
-          <img
-            :src="element.image"
-            :alt="element.title"
-            class="w-full h-full object-cover"
-          />
-        </div>
+        Meus Projetos
+      </h2>
 
-        <!-- Conteúdo do Card -->
-        <div class="flex flex-col justify-start p-6 space-y-6 md:w-1/2">
-          <span class="bg-primary2 w-28 text-center p-2 rounded-3xl text-black text-sm">
-            {{ element.category }}
-          </span>
+      <!-- Grid de 3 colunas no PC (2 no tablet, 1 no celular) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="project in projects"
+          :key="project.id"
+          data-aos="fade-up"
+          class="bg-white rounded-3xl border-2 border-primary/20 shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+        >
+          <!-- Imagem com altura controlada (h-48) para não ficar gigante -->
+          <div class="w-full h-48 overflow-hidden bg-primary/10">
+            <img
+              :src="project.image"
+              :alt="project.title"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
 
-          <h3 class="uppercase font-semibold text-primary text-base">
-            {{ element.title }}
-          </h3>
+          <!-- Conteúdo do card -->
+          <div class="p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <!-- Tag da categoria -->
+              <span class="inline-block bg-primary/10 text-primary text-xs font-medium px-3 py-1 rounded-full mb-3">
+                {{ project.category }}
+              </span>
 
-          <p class="text-[14px] leading-[20px] text-gray-500 tracking-[0.03rem]">
-            {{ element.description }}
-          </p>
+              <h3 class="uppercase font-bold text-primary text-lg mb-2">
+                {{ project.title }}
+              </h3>
 
-          <div class="flex items-center gap-3 pt-4 flex-col sm:flex-row sm:w-max sm:mx-auto lg:mx-0">
-            <!-- Botão Live Preview -->
-            <a
-              :href="element.webURL"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="relative px-6 md:px-7 py-3 rounded-full text-white bg-primary hover:scale-105 transition-all ease-in-out w-full sm:w-max flex justify-center items-center text-sm font-medium"
-            >
-              Live Preview
-            </a>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                {{ project.description }}
+              </p>
+            </div>
 
-            <a
-              :href="element.gitURL"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="border border-primary text-primary px-6 md:px-7 py-3 rounded-full hover:scale-105 transition-all ease-in-out w-full sm:w-max flex justify-center items-center text-sm font-medium"
-            >
-              Code Source
-            </a>
+            <!-- Botões (mantendo o estilo roxo arredondado) -->
+            <div class="flex items-center gap-3 mt-auto">
+              <a
+                v-if="project.liveUrl"
+                :href="project.liveUrl"
+                target="_blank"
+                class="flex-1 text-center bg-primary text-white text-xs font-semibold py-2.5 px-4 rounded-full hover:opacity-90 transition-opacity"
+              >
+                Live Preview
+              </a>
+              <a
+                v-if="project.codeUrl"
+                :href="project.codeUrl"
+                target="_blank"
+                class="flex-1 text-center border border-primary text-primary text-xs font-semibold py-2.5 px-4 rounded-full hover:bg-primary/10 transition-colors"
+              >
+                Code Source
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+
 const projects = ref([
-    {
-        id: 1,
-        image:'https://i.pinimg.com/1200x/8c/a8/35/8ca835118467e30894cc98745365085f.jpg',
-        title: 'project 1',
-        category: 'Web Mobile',
-        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis explicabo aut, quae aliquam',
-        gitURL: '',
-        webURL: ''
-    },
-    {
-        id: 2,
-        image:'https://i.pinimg.com/1200x/8c/a8/35/8ca835118467e30894cc98745365085f.jpg',
-        title: 'project 2',
-        category: 'Web Mobile',
-        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis explicabo aut, quae aliquam',
-        gitURL: '',
-        webURL: ''
-    },
-    {
-        id: 3,
-        image:'https://i.pinimg.com/1200x/8c/a8/35/8ca835118467e30894cc98745365085f.jpg',
-        title: 'project 3',
-        category: 'Web App',
-        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis explicabo aut, quae aliquam',
-        gitURL: '',
-        webURL: ''
-    },
-    {
-        id: 4,
-        image:'https://i.pinimg.com/1200x/8c/a8/35/8ca835118467e30894cc98745365085f.jpg',
-        title: 'project 4',
-        category: 'Web App',
-        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis explicabo aut, quae aliquam',
-        gitURL: '',
-        webURL: ''
-    }
-])
+  {
+    id: 1,
+    category: 'Fullstack Web',
+    title: 'CLIC Libras',
+    description: 'Plataforma colaborativa de dicionário de termos técnicos e científicos em Libras, construída com Java, Spring Boot, Vue.js e PostgreSQL.',
+    image: 'https://via.placeholder.com/600x400', // Troque pelo print do projeto
+    liveUrl: 'https://cliclibras.tech',
+    codeUrl: 'https://github.com/Grizzlyess'
+  },
+  {
+    id: 2,
+    category: 'Fullstack Web',
+    title: 'CAPI',
+    description: 'Aplicação web de consumo ecológico com calculadora de pegada de carbono e consulta de Eco-Score, usando React, Node.js, Prisma e MongoDB.',
+    image: 'https://via.placeholder.com/600x400', // Troque pelo print do projeto
+    liveUrl: '',
+    codeUrl: 'https://github.com/Grizzlyess'
+  },
+  {
+    id: 3,
+    category: 'Machine Learning',
+    title: 'Car Price Prediction',
+    description: 'Aplicação web para predição de preços de veículos utilizando Random Forest com Python, Scikit-Learn, Pandas e Django.',
+    image: 'https://via.placeholder.com/600x400', // Troque pelo print do projeto
+    liveUrl: 'https://car-price-prediction-app-3iww.onrender.com',
+    codeUrl: 'https://github.com/Grizzlyess'
+  }
+]);
 </script>

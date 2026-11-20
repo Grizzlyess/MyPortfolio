@@ -16,14 +16,14 @@
             </div>
             
             <!-- LADO DIREITO: IMAGEM -->
-            <div class="lg:col-span-7 flex justify-center items-start relative w-full">
-                <figure class="relative w-full flex justify-center items-start z-10 -mt-8 lg:-mt-16">
+            <div class="lg:col-span-7 flex justify-center items-start relative w-full mt-6 lg:mt-0">
+                <figure class="relative w-full flex justify-center items-start z-10 lg:-mt-16">
                     <img 
                         src="../assets/perfil.png" 
                         alt="Hero Picture" 
-                        class="w-full h-auto object-contain transform scale-110 origin-top drop-shadow-md"
+                        class="w-full max-w-[300px] lg:max-w-none h-auto object-contain transform lg:scale-110 origin-top drop-shadow-md"
                     />
-               </figure>
+            </figure>
             </div>
             
         </div>
