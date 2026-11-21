@@ -26,7 +26,7 @@
         :key="article.id" 
         :href="article.link" 
         target="_blank"
-        data-aos="fade-left" 
+        data-aos="fade-up" 
         class="flex items-start group cursor-pointer"
       >
         <div class="w-1/4 flex justify-center pt-1">

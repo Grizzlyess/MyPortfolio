@@ -1,11 +1,11 @@
 <template>
   <div class="w-full h-full flex flex-col">
-    <h2 class="text-xl font-bold mb-3 text-center text-gray-800" data-aos="fade-right">
+    <h2 class="text-xl font-bold mb-3 text-center text-gray-800" data-aos="fade-up">
       Experiência
     </h2>
     
     <div class="space-y-4">
-      <div v-for="element in Experience" :key="element.id" data-aos="fade-right" class="flex items-center">
+      <div v-for="element in Experience" :key="element.id" data-aos="fade-up" class="flex items-center">
         <div class="w-1/4 flex justify-center">
           <img src="https://img.icons8.com/ios-filled/50/000000/lawyer.png" alt="lawyer" class="w-9 h-9">
         </div>

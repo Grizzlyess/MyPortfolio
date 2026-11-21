@@ -11,7 +11,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         
-        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-right">
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-up">
           <a
             v-for="item in contactInfo"
             :key="item.title"
@@ -30,7 +30,7 @@
 
         <div 
           class="lg:col-span-7 bg-white rounded-3xl border-2 border-primary/20 shadow-lg p-6 md:p-8 flex flex-col justify-center" 
-          data-aos="fade-left"
+          data-aos="fade-up"
         >
           <form @submit.prevent="handleSubmit" class="space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
