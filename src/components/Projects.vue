@@ -1,6 +1,6 @@
 <template>
   <section id="projects" class="relative w-full py-12 px-4 scroll-mt-24">
-    <div class="max-w-[1300px] mx-auto">
+    <div class="w-full max-w-[1600px] mx-auto px-4">
       
       <h2 
         class="font-pacifico font-normal text-3xl md:text-4xl text-white text-center mb-10 drop-shadow-md" 

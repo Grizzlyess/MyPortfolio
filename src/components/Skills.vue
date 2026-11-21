@@ -1,6 +1,6 @@
 <template>
   <section class="w-full bg-white border-y-2 border-primary/20 shadow-md py-6 my-4">
-    <div class="max-w-[1300px] mx-auto px-6">
+    <div class="w-full max-w-[1600px] mx-auto px-4">
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0 lg:divide-x-2 lg:divide-primary/15">
         

@@ -1,7 +1,7 @@
 <template>
     <section class="relative w-full py-4 px-2 bg-transparent">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch max-w-[1300px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 items-stretch w-full max-w-[1600px] mx-auto px-4">
             
             <div class="lg:col-span-3 order-2 md:order-1 rounded-3xl p-4 bg-white border-2 border-primary/20 shadow-lg flex flex-col justify-start">
                 <Experience/>
