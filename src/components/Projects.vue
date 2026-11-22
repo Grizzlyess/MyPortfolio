@@ -102,7 +102,7 @@ const projects = ref([
     image: capiImg,
     detailsUrl: '/projeto/capi',
     liveUrl: 'https://capi-js.onrender.com', 
-    codeUrl: 'https://github.com/Tomorrow-s-Tech/cliclibras'
+    codeUrl: 'https://github.com/Grizzlyess/Capi_JS'
   },
   {
     id: 3,

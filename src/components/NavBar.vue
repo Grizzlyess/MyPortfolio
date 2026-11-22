@@ -1,14 +1,14 @@
 <template>
-  <header class="w-full text-white text-sm">
+  <header class="w-full text-white text-sm relative">
     
-    <!-- LINHA SUPERIOR  -->
+    <!-- LINHA SUPERIOR -->
     <div class="bg-[#431259] flex items-center justify-between px-4 py-3">
       
       <!-- Logo e Local -->
       <div class="flex items-center space-x-4">
-        <a href="#" class="text-2xl font-bold font-mono pt-1 flex items-baseline hover:border-white border border-transparent p-1">
+        <RouterLink to="/" class="text-2xl font-bold font-mono pt-1 flex items-baseline hover:border-white border border-transparent p-1">
           <span class="text-[#B3BEFF]">&lt;</span>Maria<span class="text-[#B3BEFF]">/&gt;</span>
-        </a>
+        </RouterLink>
         
         <div class="hidden sm:flex flex-col leading-tight cursor-pointer hover:border-white border border-transparent p-1">
           <span class="text-[#CCDCFF] text-xs">Localização</span>
@@ -46,7 +46,7 @@
           </div>
         </a>
 
-        <!-- LinkedIn  -->
+        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/mcbatista/" target="_blank" aria-label="LinkedIn" class="flex items-center cursor-pointer hover:border-white border border-transparent p-1">
           <svg class="w-7 h-7 text-white md:hidden" fill="currentColor" viewBox="0 0 24 24">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -66,34 +66,66 @@
       </div>
     </div>
 
-  
-
     <!-- LINHA INFERIOR -->
     <div class="bg-[#511F73] flex items-center px-4 py-2 space-x-1 overflow-x-auto whitespace-nowrap">
       
       <button 
         @click="isMenuOpen = !isMenuOpen"
-        class="flex items-center font-bold hover:border-white border border-transparent p-1 mr-2"
+        class="flex items-center font-bold hover:border-white border border-transparent p-1 mr-2 cursor-pointer"
       >
         <img src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" class="w-5 h-5 mr-1" alt="menu"/>
         Menu
       </button>
 
+      <RouterLink 
+        to="/" 
+        exact-active-class="border-white font-bold text-[#CCDCFF]"
+        class="hover:border-white border border-transparent p-1 px-2"
+      >
+        Início
+      </RouterLink>
 
-      <a href="#experience" class="hover:border-white border border-transparent p-1 px-2" @click="scrollToSection('#experience')">Experience</a>
-      <a href="#education" class="hover:border-white border border-transparent p-1 px-2" @click="scrollToSection('#education')">Education</a>
-      <a href="#skills" class="hover:border-white border border-transparent p-1 px-2" @click="scrollToSection('#skills')">Skills</a>
-      <a href="#projects" class="hover:border-white border border-transparent p-1 px-2 hidden sm:block" @click="scrollToSection('#projects')">Projetos Recentes</a>
-      <a href="#contact" class="hover:border-white border border-transparent p-1 px-2 hidden md:block" @click="scrollToSection('#contact')">Fale Comigo</a>
+      <RouterLink 
+        to="/programacao" 
+        active-class="border-white font-bold text-[#CCDCFF]"
+        class="hover:border-white border border-transparent p-1 px-2"
+      >
+        Programação
+      </RouterLink>
+
+      <RouterLink 
+        to="/dados" 
+        active-class="border-white font-bold text-[#CCDCFF]"
+        class="hover:border-white border border-transparent p-1 px-2"
+      >
+        Dados
+      </RouterLink>
+
+      <RouterLink 
+        to="/eventos" 
+        active-class="border-white font-bold text-[#CCDCFF]"
+        class="hover:border-white border border-transparent p-1 px-2"
+      >
+        Eventos & Relatos
+      </RouterLink>
+
+      <a 
+        href="#contact" 
+        @click.prevent="goToContact"
+        class="hover:border-white border border-transparent p-1 px-2 hidden md:block cursor-pointer"
+      >
+        Fale Comigo
+      </a>
       
     </div>
 
+    <!-- MENU DROPDOWN MOBILE -->
     <div v-if="isMenuOpen" class="md:hidden bg-[#431259] p-4 absolute w-full z-20 flex flex-col space-y-3 shadow-lg border-t border-[#60308C]">
-      <a href="#experience" class="text-white hover:text-[#B3BEFF]" @click="scrollToSection('#experience')">Experience</a>
-      <a href="#education" class="text-white hover:text-[#B3BEFF]" @click="scrollToSection('#education')">Education</a>
-      <a href="#skills" class="text-white hover:text-[#B3BEFF]" @click="scrollToSection('#skills')">Skills</a>
-      <a href="#projects" class="text-white hover:text-[#B3BEFF]" @click="scrollToSection('#projects')">Projects</a>
-      <a href="#contact" class="text-white hover:text-[#B3BEFF]" @click="scrollToSection('#contact')">Contact</a>
+      <RouterLink to="/" class="text-white hover:text-[#B3BEFF]" @click="isMenuOpen = false">Início</RouterLink>
+      <RouterLink to="/programacao" class="text-white hover:text-[#B3BEFF]" @click="isMenuOpen = false">Programação</RouterLink>
+      <RouterLink to="/dados" class="text-white hover:text-[#B3BEFF]" @click="isMenuOpen = false">Dados</RouterLink>
+      <RouterLink to="/eventos" class="text-white hover:text-[#B3BEFF]" @click="isMenuOpen = false">Eventos & Relatos</RouterLink>
+      <a href="#contact" class="text-white hover:text-[#B3BEFF]" @click.prevent="goToContact">Fale Comigo</a>
     </div>
 
   </header>
@@ -101,14 +133,13 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const isMenuOpen = ref(false);
+const router = useRouter();
 
-const scrollToSection = (href) => {
-    isMenuOpen.value = false;
-    const section = document.querySelector(href);
-    if(section){
-        section.scrollIntoView({ behavior : 'smooth'})
-    }
-}
+const goToContact = () => {
+  isMenuOpen.value = false;
+  router.push({ path: '/', hash: '#contact' });
+};
 </script>
