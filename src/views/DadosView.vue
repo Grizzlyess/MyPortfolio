@@ -28,7 +28,7 @@
       </button>
     </div>
 
-    <!-- Grid de Projetos -->
+    <!-- Projetos -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <article
         v-for="projeto in projetosFiltrados"
@@ -41,7 +41,7 @@
           v-if="projeto.imagens && projeto.imagens.length"
           class="relative w-full h-72 md:h-80 bg-[#F5F3FF] overflow-hidden border-b border-gray-100 group"
         >
-          <!-- Fundo desfocado -->
+          <!-- Fundo -->
           <img
             :src="projeto.imagens[indicesAtuais[projeto.id] || 0]"
             alt=""
@@ -56,7 +56,7 @@
             class="relative z-10 w-full h-full object-contain transition-all duration-300"
           />
 
-          <!-- Setas e bolinhas -->
+          <!-- Setas -->
           <template v-if="projeto.imagens.length > 1">
             <button
               @click="fotoAnterior(projeto.id, projeto.imagens.length)"
@@ -91,10 +91,10 @@
           </template>
         </div>
 
-        <!-- Conteúdo do Card -->
+        <!-- Card -->
         <div class="p-6 md:p-7 flex flex-col flex-1 justify-between">
           <div>
-            <!-- Badge da Categoria + Ano -->
+
             <div class="flex items-center justify-between gap-2 mb-3">
               <span
                 :class="[
@@ -119,7 +119,7 @@
               {{ projeto.descricao }}
             </p>
 
-            <!-- Destaque / Resultado -->
+            <!--  Resultado -->
             <div v-if="projeto.destaque" class="bg-[#F5F3FF] border-l-4 border-[#805EBF] rounded-r-xl px-4 py-2.5 mb-5">
               <p class="text-xs text-[#431259] font-medium">
                 <strong class="font-bold">Destaque:</strong> {{ projeto.destaque }}
@@ -128,7 +128,7 @@
           </div>
 
           <div>
-            <!-- Tags de Tecnologias -->
+            <!-- Tags -->
             <div class="flex flex-wrap gap-2 mb-5">
               <span
                 v-for="tech in projeto.tecnologias"
@@ -139,7 +139,7 @@
               </span>
             </div>
 
-            <!-- Links de Ação -->
+            <!-- Links -->
             <div
               v-if="projeto.linkDemo || projeto.linkPdf || projeto.linkRepo || projeto.statusBreve"
               class="flex flex-wrap gap-3 pt-4 border-t border-gray-100"
@@ -194,10 +194,6 @@
 <script setup>
 import { ref, computed } from 'vue';
 
-// PDFs
-import chegaMaisPdf from '../assets/pdf/CHEGAMAIS.pdf';
-import festival2025Pdf from '../assets/pdf/FESTIVAL2025.pdf';
-import festival2024Pdf from '../assets/pdf/FESTIVAL2024.pdf';
 
 // Festival 2024
 import fest24_0 from '../assets/festival2024/0.png';
