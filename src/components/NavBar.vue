@@ -98,7 +98,7 @@
         active-class="border-white font-bold text-[#CCDCFF]"
         class="hover:border-white border border-transparent p-1 px-2"
       >
-        Dados
+        Dados & IA
       </RouterLink>
 
       <RouterLink 
@@ -106,7 +106,7 @@
         active-class="border-white font-bold text-[#CCDCFF]"
         class="hover:border-white border border-transparent p-1 px-2"
       >
-        Eventos & Relatos
+        Eventos & Extensão
       </RouterLink>
 
       <a 

@@ -101,7 +101,7 @@ const projects = ref([
     description: 'Aplicação web de consumo ecológico com calculadora de pegada de carbono e consulta de Eco-Score, usando React, Node.js, Prisma e MongoDB.',
     image: capiImg,
     detailsUrl: '/projeto/capi',
-    liveUrl: 'https://capi-js.onrender.com', 
+    liveUrl: 'https://grizzlyess.github.io/Capi_JS/#/login', 
     codeUrl: 'https://github.com/Grizzlyess/Capi_JS'
   },
   {
