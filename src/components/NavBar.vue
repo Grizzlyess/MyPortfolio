@@ -110,12 +110,30 @@
       </RouterLink>
 
       <a 
+        href="#services" 
+        @click.prevent="goToSection('#services')"
+        class="hover:border-white border border-transparent p-1 px-2 hidden md:block cursor-pointer"
+      >
+        Meus Serviços
+      </a>
+
+      <a 
+        href="#projects" 
+        @click.prevent="goToSection('#projects')"
+        class="hover:border-white border border-transparent p-1 px-2 hidden sm:block cursor-pointer"
+      >
+        Projetos Recentes
+      </a>
+
+      <a 
         href="#contact" 
-        @click.prevent="goToContact"
+        @click.prevent="goToSection('#contact')"
         class="hover:border-white border border-transparent p-1 px-2 hidden md:block cursor-pointer"
       >
         Fale Comigo
       </a>
+
+
       
     </div>
 
@@ -138,8 +156,8 @@ import { useRouter } from 'vue-router';
 const isMenuOpen = ref(false);
 const router = useRouter();
 
-const goToContact = () => {
+const goToSection = (hash) => {
   isMenuOpen.value = false;
-  router.push({ path: '/', hash: '#contact' });
+  router.push({ path: '/', hash });
 };
 </script>
