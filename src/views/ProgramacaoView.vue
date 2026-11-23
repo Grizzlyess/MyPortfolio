@@ -28,7 +28,7 @@
       </button>
     </div>
 
-    <!-- Grid de Projetos -->
+    <!-- Grid  -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <article
         v-for="projeto in projetosFiltrados"
@@ -36,7 +36,7 @@
         data-aos="fade-up"
         class="bg-white rounded-3xl border-2 border-[#805EBF]/30 shadow-lg overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
       >
-        <!-- Carrossel (aparece automaticamente quando adicionar imagens) -->
+        <!-- Carrossel -->
         <div
           v-if="projeto.imagens && projeto.imagens.length"
           class="relative w-full h-72 md:h-80 bg-[#F5F3FF] overflow-hidden border-b border-gray-100 group"
