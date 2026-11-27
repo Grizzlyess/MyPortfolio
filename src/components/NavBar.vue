@@ -106,7 +106,7 @@
         active-class="border-white font-bold text-[#CCDCFF]"
         class="hover:border-white border border-transparent p-1 px-2"
       >
-        Eventos & Extensão
+        Pesquisa & Extensão
       </RouterLink>
 
       <a 
