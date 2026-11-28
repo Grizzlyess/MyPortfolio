@@ -17,14 +17,23 @@
             :key="item.title"
             :href="item.link || undefined"
             :target="item.link ? '_blank' : undefined"
+            :rel="item.link ? 'noopener noreferrer' : undefined"
+            @click="handleCardClick($event, item)"
             class="bg-white rounded-3xl border-2 border-primary/20 shadow-lg p-6 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-            :class="{ 'cursor-pointer': item.link }"
+            :class="{ 'cursor-pointer': item.link || item.isEmail }"
           >
             <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-3">
               <span v-html="item.icon" class="w-6 h-6"></span>
             </div>
-            <h3 class="font-bold text-gray-800 text-sm mb-1">{{ item.title }}</h3>
-            <p class="text-gray-500 text-xs break-words w-full">{{ item.value }}</p>
+            <h3 class="font-bold text-gray-800 text-sm mb-1">
+              {{ item.isEmail && emailCopiado ? 'E-mail copiado!' : item.title }}
+            </h3>
+            <p
+              class="text-xs break-words w-full transition-colors"
+              :class="item.isEmail && emailCopiado ? 'text-green-600 font-bold' : 'text-gray-500'"
+            >
+              {{ item.isEmail && emailCopiado ? 'Pronto para colar ✓' : item.value }}
+            </p>
           </a>
         </div>
 
@@ -68,7 +77,6 @@
               ></textarea>
             </div>
 
-            
             <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
               <p v-if="status === 'success'" class="text-green-600 text-xs font-semibold">
                 Mensagem enviada com sucesso!
@@ -95,8 +103,37 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
+
+interface ContactItem {
+  title: string;
+  value: string;
+  link: string;
+  icon: string;
+  isEmail?: boolean;
+}
+
+const emailCopiado = ref<boolean>(false);
+
+const copiarEmail = async (email: string): Promise<void> => {
+  try {
+    await navigator.clipboard.writeText(email);
+    emailCopiado.value = true;
+    setTimeout(() => {
+      emailCopiado.value = false;
+    }, 2500);
+  } catch (err) {
+    console.error('Erro ao copiar e-mail:', err);
+  }
+};
+
+const handleCardClick = (event: MouseEvent, item: ContactItem): void => {
+  if (item.isEmail) {
+    event.preventDefault();
+    copiarEmail(item.value);
+  }
+};
 
 const form = ref({
   name: '',
@@ -104,9 +141,9 @@ const form = ref({
   message: ''
 });
 
-const status = ref('');
+const status = ref<string>('');
 
-const handleSubmit = async () => {
+const handleSubmit = async (): Promise<void> => {
   status.value = 'sending';
 
   try {
@@ -130,7 +167,7 @@ const handleSubmit = async () => {
   }
 };
 
-const contactInfo = ref([
+const contactInfo = ref<ContactItem[]>([
   {
     title: 'Localização',
     value: 'Fortaleza - CE, Brasil',
@@ -140,7 +177,8 @@ const contactInfo = ref([
   {
     title: 'E-mail',
     value: 'mariaclarab316@gmail.com',
-    link: 'mailto:seu-email@gmail.com',
+    link: '',
+    isEmail: true,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>`
   },
   {
