@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mariaclarab.com.br/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mariaclarab.com.br/programacao</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mariaclarab.com.br/dados</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mariaclarab.com.br/eventos</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
